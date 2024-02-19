@@ -1,8 +1,21 @@
-import React from "react";
-import IPhone from "../assets/images/iphone-14.jpg"
-import holdingIPhone from "../assets/images/iphone-hand.png"
+import React, { useEffect } from "react";
+import gsap  from "gsap";
+
 
 function HeroSection() {
+
+    useEffect(() =>{
+        const tl = gsap.timeline();
+        tl.from(".text",{
+            y:200,
+            ease:"power4.out",
+            duration:1.8,
+            delay:2,
+            opacity:0
+        })
+
+    })
+
 
     const handleSoundSection = () => {
         const elemnt = document.querySelector(".sound-section");
@@ -15,13 +28,8 @@ function HeroSection() {
 
     return ( 
         <div className="jumbotron-section wrapper">
-            {/* <h2 className="title">New</h2>
-            <img className="logo" src={IPhone} alt="iphone 14 pro" />
-            <p className="text">Big and Bigger</p>
-            <span className="description">
-                From $41.62/mo. for 24 mo. or $999 before trade-in
-            </span>
-            <ul className="links">
+            <p className="text">Discover Clarity with Subvision</p>
+            {/* <ul className="links">
                 <li>
                     <button className="button">Buy</button>
                 </li>
@@ -29,7 +37,6 @@ function HeroSection() {
                     <a className="link" onClick={handleSoundSection}>Learn more</a>
                 </li>
             </ul> */}
-            {/* <img className="iphone-img" src={holdingIPhone} alt="iphone" /> */}
         </div>
      );
 }
